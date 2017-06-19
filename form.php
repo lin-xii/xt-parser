@@ -102,11 +102,13 @@ function parseTrace($file)
                 var arrKey = timeData.axisValue;
 
                 str = '时间: '+detailData[arrKey].time+" ms<br>";
-                str += '耗时: '+detailData[arrKey].consuming+" ms<br>";
+                // if (detailData[parseInt(arrKey)+1] != 'undefined') {str += '耗时: '+detailData[parseInt(arrKey)+1].consuming+" ms<br>";}
+                str += '耗时: '+detailData[parseInt(arrKey)+1].consuming+" ms<br>";
                 str += '内存: '+detailData[arrKey].memory+" kb<br>";
                 str += '函数名: '+detailData[arrKey].function+"<br>";
                 str += '函数位置: '+detailData[arrKey].location+"<br>";;
                 str += '日志行数: '+detailData[arrKey].line;
+
                 return str;
             }
         },
